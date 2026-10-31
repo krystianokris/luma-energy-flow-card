@@ -4,7 +4,7 @@ A standalone Home Assistant dashboard card by **krystianokris**. A weather-aware
 
 ![Luma Energy Flow](docs/preview-desktop.png)
 
-## First release · 0.1.0
+## Current release · 0.1.1
 
 - Six layouts: Classic House, Rings, River, Tiles, Overview and Schematic.
 - Glass Navy and Clear Glass materials. House photographs remain visible in Classic and Rings.
@@ -18,7 +18,7 @@ A standalone Home Assistant dashboard card by **krystianokris**. A weather-aware
 - Octopus Energy prices and costs in **GBP**, including negative electricity rates and pence conversion.
 - HA data updates preserve tile and flow elements. Reduced-motion preferences are respected.
 
-This is a first public release. Automated custom-element tests and a standalone browser preview have been checked; installation and visual sizing inside a real HA dashboard still need a live test. It is not yet part of the default HACS catalog.
+This early release has automated custom-element tests and a standalone browser preview. HACS installation and live grid/house/gas, Octopus and sun/weather readings have also been checked in a real HA dashboard. It is not yet part of the default HACS catalog.
 
 ## Install with HACS (custom repository)
 
@@ -33,7 +33,7 @@ The repository layout and generated filename follow the [HACS dashboard requirem
 ## Manual installation
 
 Download `luma-energy-flow-card.js` from the release and put it in `/config/www/luma-energy-flow-card.js`.
-Add `/local/luma-energy-flow-card.js?v=0.1.0` as a JavaScript module resource, reload the browser, and add the card. The file includes all images and styles; no other assets need to be copied.
+Add `/local/luma-energy-flow-card.js?v=0.1.1` as a JavaScript module resource, reload the browser, and add the card. The file includes all images and styles; no other assets need to be copied.
 
 ```yaml
 type: custom:luma-energy-flow-card

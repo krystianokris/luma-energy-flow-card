@@ -1,6 +1,6 @@
 export const VIEWS=['classic','rings','river','tiles','overview','schematic'];
 export const DEVICES=['grid','home','solar','battery','soc','ev','gas','heat_pump','heating','rate','next_rate','today_cost','today_energy','gas_cost','grid_import','grid_export','battery_charge','battery_discharge'];
-export const POSITIONS={grid:[12,35],solar:[68,12],home:[87,48],battery:[48,82],ev:[22,80],gas:[86,82],heat_pump:[73,67],heating:[70,85]};
+export const POSITIONS={grid:[12,35],solar:[68,12],home:[87,48],battery:[48,82],ev:[22,80],gas:[86,82],heat_pump:[66,48],heating:[66,82]};
 export function normalize(config){
  if(!config||typeof config!=='object')throw new Error('Luma: configuration must be an object.');
  const c={type:'custom:luma-energy-flow-card',title:'Luma Energy Flow',view:'classic',theme:'navy',demo:false,lighting:'auto',weather_mode:'auto',idle_threshold:10,language:'auto',...config};
