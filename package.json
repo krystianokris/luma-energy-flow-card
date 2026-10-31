@@ -1,0 +1,14 @@
+{
+  "name": "luma-energy-flow-card",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun build.mjs",
+    "test": "bun test --preload ./test/setup.ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "happy-dom": "^21.0.4"
+  }
+}

@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Luma Energy Flow Card · Preview</title>
+<style>body{margin:0;background:#070f1f;color:#e4f1ff;font-family:system-ui,sans-serif}main{max-width:1200px;margin:24px auto;padding:0 16px}nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}nav button{min-height:46px;padding:10px 18px;background:#203c54;color:#e4f1ff;border:1px solid #90d7ed55;border-radius:12px;cursor:pointer}h1{font-size:22px;font-weight:500}p{color:#adc3d6;font-size:13px}#editor{background:#fff;color:#111;padding:16px;margin-top:20px;border-radius:18px;max-width:700px}#card{max-width:1100px;margin:auto}.phone #card{max-width:390px}.tablet #card{max-width:768px}.editor-toggle{margin-top:20px}</style>
+<main><h1>Luma Energy Flow Card</h1><p>Standalone Home Assistant card · local demo · no account connection or device commands</p><nav><button data-light="day">Day</button><button data-light="night">Night</button><button data-size="desktop">Desktop</button><button data-size="tablet">Tablet</button><button data-size="phone">Phone</button><button id="toggle-editor">Visual editor</button></nav><div id="card"></div><div id="editor" hidden></div></main>
+<script type="module">
+import '../dist/luma-energy-flow-card.js';
+const card=document.createElement('luma-energy-flow-card');
+let config={type:'custom:luma-energy-flow-card',demo:true,title:'Luma Energy Flow',lighting:'night',theme:'navy',view:'classic',language:'en',entities:{gas:'sensor.gas',heat_pump:'sensor.heat_pump'}};
+const hass={config:{time_zone:'Europe/London'},locale:{language:'en'},states:{'weather.home':{state:'rainy',attributes:{friendly_name:'Home weather'}},'sun.sun':{state:'below_horizon'},'sensor.gas':{state:'8.60',attributes:{unit_of_measurement:'kWh',friendly_name:'Gas today'}},'sensor.heat_pump':{state:'850',attributes:{unit_of_measurement:'W',friendly_name:'Heat pump'}}}};
+card.setConfig(config);card.hass=hass;document.querySelector('#card').append(card);
+const editor=document.createElement('luma-energy-flow-card-editor');editor.setConfig(config);editor.hass=hass;document.querySelector('#editor').append(editor);
+editor.addEventListener('config-changed',e=>{config=e.detail.config;card.setConfig(config);card.hass=hass;});
+document.querySelectorAll('[data-light]').forEach(b=>b.onclick=()=>{config={...config,lighting:b.dataset.light};card.setConfig(config);editor.setConfig(config);});
+document.querySelectorAll('[data-size]').forEach(b=>b.onclick=()=>{document.body.className=b.dataset.size;});
+document.querySelector('#toggle-editor').onclick=()=>{document.querySelector('#editor').hidden=!document.querySelector('#editor').hidden;};
+</script></html>

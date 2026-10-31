@@ -1,0 +1,14 @@
+type: custom:luma-energy-flow-card
+title: Luma Energy Flow
+demo: false
+theme: navy
+view: classic
+lighting: auto
+sun: sun.sun
+weather: weather.home
+entities:
+  grid: sensor.grid_power
+  home: sensor.house_power
+  rate: sensor.octopus_current_rate
+  today_cost: sensor.electricity_cost_today
+  today_energy: sensor.electricity_kwh_today

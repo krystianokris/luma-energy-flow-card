@@ -1,0 +1,25 @@
+type: custom:luma-energy-flow-card
+title: My energy
+demo: false
+theme: navy
+view: rings
+lighting: auto
+weather_mode: auto
+sun: sun.sun
+weather: weather.home
+entities:
+  grid_import: sensor.grid_import_power
+  grid_export: sensor.grid_export_power
+  home: sensor.house_power
+  solar: sensor.solar_power
+  battery: sensor.battery_power
+  soc: sensor.battery_percentage
+  ev: sensor.ev_charging_power
+  gas: sensor.gas_today
+  heat_pump: sensor.heat_pump_power
+  heating: sensor.heating_power
+  rate: sensor.octopus_current_rate
+  next_rate: sensor.octopus_next_rate
+  today_cost: sensor.electricity_cost_today
+  today_energy: sensor.electricity_kwh_today
+  gas_cost: sensor.gas_cost_today
