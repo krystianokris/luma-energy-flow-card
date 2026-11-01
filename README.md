@@ -114,6 +114,4 @@ The custom element implements the [Home Assistant custom-card API](https://contr
 
 MIT © 2026 Krystian (**krystianokris**). See [LICENSE](LICENSE).
 
-The house-energy visualization concept was inspired by [mimikm/Home-Power-Flow-Card](https://github.com/mimikm/Home-Power-Flow-Card). This card is a separate implementation; no code from that repository is included and no endorsement is implied.
-
 The house artwork was generated for this project family using OpenAI image generation and converted to WebP. See [ASSETS.md](ASSETS.md). No exclusive copyright in AI-generated imagery is claimed. HA, HACS and Octopus Energy are independent projects/services; this is a community card.
